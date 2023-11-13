@@ -1,0 +1,2 @@
+# C-GenAI Course repo
+

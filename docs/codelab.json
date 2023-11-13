@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-11-18T00:43:56Z",
+  "id": "docs",
+  "duration": 0,
+  "title": "GenAI Labs",
+  "summary": "GenAI Labs",
+  "source": "1gDNMGg8bOw1VRHSDLpn4FJdMsKGfWjlAm8NWRdIqmOE",
+  "theme": "",
+  "status": [
+    "-"
+  ],
+  "category": [
+    "-"
+  ],
+  "tags": [
+    "detailed",
+    "web"
+  ],
+  "feedback": "-",
+  "url": "docs"
+}

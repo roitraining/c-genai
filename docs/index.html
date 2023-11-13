@@ -1,0 +1,259 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>GenAI Labs</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="docs"
+                  title="GenAI Labs"
+                  environment="web"
+                  feedback-link="-">
+    
+      <google-codelab-step label="Prompt Design" duration="0">
+        <h2 is-upgraded><strong>Setting up</strong></h2>
+<ol type="1" start="1">
+<li>Log into <a href="https://googlecloud.qwiklabs.com" target="_blank">https://googlecloud.qwiklabs.com</a> and navigate to the <strong>Text Generation for Applications using Generative AI Studio</strong> class.</li>
+<li>Start the <strong>Getting Started with the PaLM API</strong> lab</li>
+<li>Follow the instructor&#39;s guidance to log into Google Cloud with lab credentials</li>
+</ol>
+<aside class="warning"><p><strong>You will NOT be following the Qwiklabs instructions for this lab. </strong>Rather, follow the instructions below.</p>
+</aside>
+<h2 is-upgraded>Creating a notebook instance</h2>
+<ol type="1" start="4">
+<li>Go to <strong>Navigation &gt; Vertex AI &gt; Workbench</strong></li>
+<li>Click on the <strong>ENABLE ALL RECOMMENDED APIS</strong> button</li>
+<li>Click on the <strong>Instance</strong> tab and then on the <strong>Instances</strong> view</li>
+<li>Click <strong>CREATE NEW</strong></li>
+<li>Enter <code>prompt-design</code> as the name of your instance, leave the rest of the settings at their default values, and click on <strong>CREATE</strong></li>
+</ol>
+<h2 is-upgraded><strong>Setting up your notebook instance</strong></h2>
+<ol type="1" start="9">
+<li>When your instance has been created and you see the <strong>OPEN JUPYTERLAB</strong> button, click the button to open a new tab in your browser that connects to the instances JupyterLab software</li>
+<li>On the left side of the JupyterLab interface, you will see a vertical tool palette. Click the Git icon in the palette.</li>
+<li>Click on the <strong>Clone a repository</strong> button</li>
+<li>In the modal popup, enter the following Github URL: <a href="https://github.com/GoogleCloudPlatform/generative-ai" target="_blank">https://github.com/GoogleCloudPlatform/generative-ai</a> and then click <strong>Clone</strong></li>
+</ol>
+<h2 is-upgraded><strong>Work through the intro_prompt_design notebook</strong></h2>
+<ol type="1" start="13">
+<li>In the navigation pane (which shows <strong>generative-ai</strong> as the only entry), drill down to <strong>generative-ai &gt; language &gt; prompts</strong></li>
+<li>Double-click on the <strong>intro_prompt_design</strong> notebook</li>
+<li>When prompted, accept the <strong>Python 3</strong> kernel and click <strong>Select</strong></li>
+<li> Work through the entire notebook</li>
+</ol>
+<aside class="special"><p><strong>Tips</strong></p>
+<ul>
+<li>Use <code>Shift-Enter</code> to execute a cell and move to the next</li>
+<li>Read and understand each of the documentation cells</li>
+<li>Wait for a cell to complete before executing the subsequent cell</li>
+<li>After you&#39;ve run through cells, feel free to go back and try changing the prompts. Write your own version of a bad prompt and a good prompt for each concept and see what happens</li>
+</ul>
+</aside>
+<h2 is-upgraded><strong>Work through workbooks for specific use cases</strong></h2>
+<ol type="1" start="17">
+<li>In the navigation area, drill down into the <strong>examples</strong> folder</li>
+<li>Work through each of the following workbooks as you did with the first notebook</li>
+</ol>
+<aside class="special"><p><strong>Notebooks</strong></p>
+<ul>
+<li><code>question_answering</code></li>
+<li><code>text_classification</code></li>
+<li><code>text_extraction</code></li>
+<li><code>text_summarization</code></li>
+</ul>
+</aside>
+<ol type="1" start="19">
+<li>If you get done early, try the <strong>chain_of_thought</strong> and <strong>ideation</strong> workbooks as well.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="A simple chatbot" duration="0">
+        <h2 is-upgraded><strong>Setting up</strong></h2>
+<ol type="1" start="1">
+<li>Log into <a href="https://googlecloud.qwiklabs.com" target="_blank">https://googlecloud.qwiklabs.com</a> and navigate to the <strong>Text Generation for Applications using Generative AI Studio</strong> class.</li>
+<li>Start the <strong>Integrating the PaLM API into Applications</strong> lab</li>
+<li>Log into Google Cloud with the lab-generated credentials</li>
+<li>Click on the <strong>Activate Cloud Shell</strong> button</li>
+</ol>
+<aside class="warning"><p><strong>You will NOT be following the Qwiklabs instructions for this lab. </strong>Rather, follow the instructions below.</p>
+</aside>
+<h2 is-upgraded><strong>Understanding the application</strong></h2>
+<ol type="1" start="5">
+<li>In a new browser tab, visit the <a href="https://github.com/roitraining/c-genai/blob/main/chat/chat.py" target="_blank">source code page in Github</a></li>
+<li>Review the code in the application. </li>
+</ol>
+<aside class="special"><p><strong>Note specifically:</strong></p>
+<ul>
+<li>The cloud client library being imported</li>
+<li>The chat session object being created</li>
+<li>How the chat session object is stored between page updates</li>
+<li>How the chat history is displayed upon page update</li>
+<li>The parameters used when calling the PaLM API</li>
+<li>The call made to the PaLM API</li>
+</ul>
+</aside>
+<h2 is-upgraded><strong>Deploying and testing the application</strong></h2>
+<ol type="1" start="7">
+<li>Follow the directions found in the <strong>Setup</strong> section of the repo&#39;s <a href="https://github.com/roitraining/c-genai/tree/main/chat" target="_blank">README.md</a>. Perform the tasks within the Cloud Shell terminal.</li>
+</ol>
+<aside class="special"><p><strong>Here&#39;s what these commands are doing:</strong></p>
+<ul>
+<li>Cloning a Git repository to your Cloud Shell machine</li>
+<li>Enabling services that will be used to run your app and do Generative AI work</li>
+<li>Assigning permissions so that your app can run in Cloud Run</li>
+<li>Creating an Artifact Registry repo that will store your application&#39;s container image</li>
+<li>Using Cloud Build to create the container image, upload it to the repo, then deploy as a Cloud Run service</li>
+</ul>
+</aside>
+<ol type="1" start="8">
+<li>Go to <strong>Navigation &gt; Cloud Run </strong>and click on the <strong>chat</strong> service entry</li>
+<li>Click on the URL to visit your application. Test it out.</li>
+</ol>
+<h2 is-upgraded><strong>Extra credit</strong></h2>
+<ol type="1" start="10">
+<li>Make some changes to your app</li>
+<li>Re-run the <code>gcloud build</code> command to reply your service</li>
+<li>Try the app after the new version has been deployed</li>
+</ol>
+<h2 is-upgraded><strong>Cleanup</strong></h2>
+<ol type="1" start="13">
+<li>Make sure to delete the service with the following command:<br></li>
+</ol>
+<pre><code>gcloud run services delete chat --region us-central1 --platform managed --quiet</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="The Codey API" duration="0">
+        <h2 is-upgraded><strong>Setting up</strong></h2>
+<ol type="1" start="1">
+<li>Log into <a href="https://googlecloud.qwiklabs.com" target="_blank">https://googlecloud.qwiklabs.com</a> and navigate to the <strong>Text Generation for Applications using Generative AI Studio</strong> class.</li>
+<li>Start the <strong>Getting started with the Gen AI Studio UI</strong> lab</li>
+<li>Follow the instructor&#39;s guidance to log into Google Cloud with lab credentials</li>
+</ol>
+<aside class="warning"><p><strong>You will NOT be following the Qwiklabs instructions for this lab. </strong>Rather, follow the instructions below.</p>
+</aside>
+<h2 is-upgraded><strong>Creating SQL queries</strong></h2>
+<ol type="1" start="1">
+<li>Got to <strong>Navigation &gt; Vertex AI &gt; Language</strong></li>
+<li>Click on <strong>CODE PROMPT</strong></li>
+<li>Work in the Studio interface to have Codey write 2-3 SQL queries for you</li>
+</ol>
+<ol type="1" start="1">
+<li>If you don&#39;t get results you like, try revising your prompt and changing the <strong>Temperature</strong></li>
+</ol>
+<ol type="1" start="4">
+<li>Return to the top of the <strong>Language</strong> section and click on <strong>CODE CHAT</strong></li>
+<li>Find a relatively sophisticated SQL query and have Codey explain it to you step by step</li>
+<li>Find a SQL query that can be optimized and try to have Codey suggestion optimizations. You&#39;ll find this is quite hit-or-miss.</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Image and Speech Models" duration="0">
+        <h2 is-upgraded><strong>Setting up</strong></h2>
+<ol type="1" start="4">
+<li>Log into <a href="https://googlecloud.qwiklabs.com" target="_blank">https://googlecloud.qwiklabs.com</a> and navigate to the <strong>Text Generation for Applications using Generative AI Studio</strong> class.</li>
+<li>Start the <strong>Prompt Design for Text Generation in Gen AI Studio</strong> lab</li>
+<li>Follow the instructor&#39;s guidance to log into Google Cloud with lab credentials</li>
+</ol>
+<aside class="warning"><p><strong>You will NOT be following the Qwiklabs instructions for this lab. </strong>Rather, follow the instructions below.</p>
+</aside>
+<h2 is-upgraded><strong>Creating a notebook instance</strong></h2>
+<ol type="1" start="7">
+<li>Go to <strong>Navigation &gt; Vertex AI &gt; Workbench</strong></li>
+<li>Click on the <strong>ENABLE ALL RECOMMENDED APIS</strong> button</li>
+<li>Click on the <strong>Instance</strong> tab and then on the <strong>Instances</strong> view</li>
+<li>Click <strong>CREATE NEW</strong></li>
+<li>Enter <code>image-and-speech</code> as the name of your instance, leave the rest of the settings at their default values, and click on <strong>CREATE</strong></li>
+</ol>
+<h2 is-upgraded><strong>Setting up your notebook instance</strong></h2>
+<ol type="1" start="12">
+<li>When your instance has been created and you see the <strong>OPEN JUPYTERLAB</strong> button, click the button to open a new tab in your browser that connects to the instances JupyterLab software</li>
+<li>On the left side of the JupyterLab interface, you will see a vertical tool palette. Click the Git icon in the palette.</li>
+<li>Click on the <strong>Clone a repository</strong> button</li>
+<li>In the modal popup, enter the following Github URL: <a href="https://github.com/GoogleCloudPlatform/generative-ai" target="_blank">https://github.com/GoogleCloudPlatform/generative-ai</a> and then click <strong>Clone</strong></li>
+</ol>
+<h2 is-upgraded><strong>Work through the intro_prompt_design notebook</strong></h2>
+<ol type="1" start="16">
+<li>In the navigation pane (which shows <strong>generative-ai</strong> as the only entry), drill down to <strong>generative-ai &gt; vision &gt; getting-started</strong></li>
+<li>Work through both the notebooks you find there</li>
+<li>When done with the vision notebooks, navigate back up to the <strong>generative-ai</strong> folder, then down into <strong>speech &gt; getting-started</strong> (caveat, in the captioning workbook, the image they use for the last section doesn&#39;t actually generate captions. Find another image online that you like and use that instead)</li>
+<li>Work through the speech notebook</li>
+<li>End your lab</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Text Embeddings and Vertex Search" duration="0">
+        <ol type="1" start="1">
+<li>Log into <a href="https://googlecloud.qwiklabs.com" target="_blank">https://googlecloud.qwiklabs.com</a> and navigate to the <strong>Text Generation for Applications using Generative AI Studio</strong> class.</li>
+<li>Start the <strong>Getting Started with the PaLM API</strong> lab</li>
+<li>Follow the instructor&#39;s guidance to log into Google Cloud with lab credentials</li>
+</ol>
+<aside class="warning"><p><strong>You will NOT be following the Qwiklabs instructions for this lab. </strong>Rather, follow the instructions below.</p>
+</aside>
+<h2 is-upgraded><strong>Try out the sample application</strong></h2>
+<ol type="1" start="4">
+<li>In a new browser tab, visit <a href="https://ai-demos.dev/" target="_blank">https://ai-demos.dev/</a> </li>
+<li>Play around with the application</li>
+<li>Click on <strong>HOW WE BUILT IT</strong> and review the design of the application</li>
+</ol>
+<h2 is-upgraded><strong>Creating a notebook instance</strong></h2>
+<ol type="1" start="7">
+<li>Go to <strong>Navigation &gt; Vertex AI &gt; Workbench</strong></li>
+<li>Click on the <strong>ENABLE ALL RECOMMENDED APIS</strong> button</li>
+<li>Click on the <strong>Instance</strong> tab and then on the <strong>Instances</strong> view</li>
+<li>Click <strong>CREATE NEW</strong></li>
+<li>Enter <code>embeddings</code> as the name of your instance, leave the rest of the settings at their default values, and click on <strong>CREATE</strong></li>
+</ol>
+<h2 is-upgraded><strong>Setting up your notebook instance</strong></h2>
+<ol type="1" start="12">
+<li>When your instance has been created and you see the <strong>OPEN JUPYTERLAB</strong> button, click the button to open a new tab in your browser that connects to the instances JupyterLab software</li>
+<li>On the left side of the JupyterLab interface, you will see a vertical tool palette. Click the Git icon in the palette.</li>
+<li>Click on the <strong>Clone a repository</strong> button</li>
+<li>In the modal popup, enter the following Github URL - <a href="https://github.com/roitraining/c-genai.git" target="_blank">https://github.com/roitraining/c-genai.git</a> - and then click <strong>Clone</strong></li>
+</ol>
+<h2 is-upgraded><strong>Work through the intro_prompt_design notebook</strong></h2>
+<ol type="1" start="13">
+<li>In the navigation pane, drill down to <strong>c-genai &gt; intro-textemb-vectorsearch</strong></li>
+<li>Double-click on the <strong> intro-textemb-vectorsearch</strong> notebook</li>
+<li>When prompted, accept the <strong>Python 3</strong> kernel and click <strong>Select</strong></li>
+<li> Work through the entire notebook</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
