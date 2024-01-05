@@ -30,10 +30,13 @@
 
 ## Cleanup
 
-1. Undeploy the model and remove the endpoint (replace placeholder) at the
-   end of day when the students do the embedding lab.
+Do cleanup at the end of the day where the students do the embeddings lab.
+Also, make sure no one else is running the class. If someone is, leave the
+cleanup to the last person running the class that day.
+
+1. Undeploy the model and remove the endpoint.
    ```bash
-   PROJECT_ID="class-project-id"
+   export PROJECT_ID="class-project-id"
    python v-clean.py
    ```
 

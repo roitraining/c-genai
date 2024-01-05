@@ -25,4 +25,4 @@ my_index_endpoint.deploy_index(
 )
 
 print (f"endpoint_id: {my_index_endpoint.name}")
-print (f"deployed_index_id: {my_index_endpoint.deployedIndexes[0].id}")
+print (f"deployed_index_id: {my_index_endpoint.deployed_indexes[0].id}")
