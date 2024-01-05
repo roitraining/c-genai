@@ -70,18 +70,7 @@
 <h2 is-upgraded><strong>Work through workbooks for specific use cases</strong></h2>
 <ol type="1" start="17">
 <li>In the navigation area, drill down into the <strong>examples</strong> folder</li>
-<li>Work through each of the following workbooks as you did with the first notebook</li>
-</ol>
-<aside class="special"><p><strong>Notebooks</strong></p>
-<ul>
-<li><code>question_answering</code></li>
-<li><code>text_classification</code></li>
-<li><code>text_extraction</code></li>
-<li><code>text_summarization</code></li>
-</ul>
-</aside>
-<ol type="1" start="19">
-<li>If you get done early, try the <strong>chain_of_thought</strong> and <strong>ideation</strong> workbooks as well.</li>
+<li>Work through each of the workbooks as you did with the first notebook</li>
 </ol>
 
 
@@ -132,7 +121,7 @@
 <h2 is-upgraded><strong>Extra credit</strong></h2>
 <ol type="1" start="10">
 <li>Make some changes to your app</li>
-<li>Re-run the <code>gcloud build</code> command to reply your service</li>
+<li>Re-run the <code>gcloud build</code> command to redeploy your service</li>
 <li>Try the app after the new version has been deployed</li>
 </ol>
 <h2 is-upgraded><strong>Cleanup</strong></h2>
@@ -154,7 +143,7 @@
 <aside class="warning"><p><strong>You will NOT be following the Qwiklabs instructions for this lab. </strong>Rather, follow the instructions below.</p>
 </aside>
 <h2 is-upgraded><strong>Creating SQL queries</strong></h2>
-<ol type="1" start="1">
+<ol type="1" start="4">
 <li>Got to <strong>Navigation &gt; Vertex AI &gt; Language</strong></li>
 <li>Click on <strong>CODE PROMPT</strong></li>
 <li>Work in the Studio interface to have Codey write 2-3 SQL queries for you</li>
@@ -162,10 +151,10 @@
 <ol type="1" start="1">
 <li>If you don&#39;t get results you like, try revising your prompt and changing the <strong>Temperature</strong></li>
 </ol>
-<ol type="1" start="4">
+<ol type="1" start="7">
 <li>Return to the top of the <strong>Language</strong> section and click on <strong>CODE CHAT</strong></li>
-<li>Find a relatively sophisticated SQL query and have Codey explain it to you step by step</li>
-<li>Find a SQL query that can be optimized and try to have Codey suggestion optimizations. You&#39;ll find this is quite hit-or-miss.</li>
+<li>Find a relatively sophisticated SQL query (from work, online, ask instructor) and have Codey explain it to you step by step</li>
+<li>Find a SQL query that can be optimized  (from work, online, ask instructor) and try to have Codey suggestion optimizations. You&#39;ll find this is quite hit-or-miss.</li>
 </ol>
 
 
@@ -173,15 +162,15 @@
     
       <google-codelab-step label="Image and Speech Models" duration="0">
         <h2 is-upgraded><strong>Setting up</strong></h2>
-<ol type="1" start="4">
-<li>Log into <a href="https://googlecloud.qwiklabs.com" target="_blank">https://googlecloud.qwiklabs.com</a> and navigate to the <strong>Text Generation for Applications using Generative AI Studio</strong> class.</li>
-<li>Start the <strong>Prompt Design for Text Generation in Gen AI Studio</strong> lab</li>
+<ol type="1" start="1">
+<li>Log into <a href="https://googlecloud.qwiklabs.com" target="_blank">https://googlecloud.qwiklabs.com</a> and navigate to the <strong>Vertex AI Model Garden</strong> class.</li>
+<li>Start the <strong>Use the PaLM API to Cluster Products Based on Descriptions</strong> lab</li>
 <li>Follow the instructor&#39;s guidance to log into Google Cloud with lab credentials</li>
 </ol>
 <aside class="warning"><p><strong>You will NOT be following the Qwiklabs instructions for this lab. </strong>Rather, follow the instructions below.</p>
 </aside>
 <h2 is-upgraded><strong>Creating a notebook instance</strong></h2>
-<ol type="1" start="7">
+<ol type="1" start="4">
 <li>Go to <strong>Navigation &gt; Vertex AI &gt; Workbench</strong></li>
 <li>Click on the <strong>ENABLE ALL RECOMMENDED APIS</strong> button</li>
 <li>Click on the <strong>Instance</strong> tab and then on the <strong>Instances</strong> view</li>
@@ -189,16 +178,16 @@
 <li>Enter <code>image-and-speech</code> as the name of your instance, leave the rest of the settings at their default values, and click on <strong>CREATE</strong></li>
 </ol>
 <h2 is-upgraded><strong>Setting up your notebook instance</strong></h2>
-<ol type="1" start="12">
+<ol type="1" start="9">
 <li>When your instance has been created and you see the <strong>OPEN JUPYTERLAB</strong> button, click the button to open a new tab in your browser that connects to the instances JupyterLab software</li>
 <li>On the left side of the JupyterLab interface, you will see a vertical tool palette. Click the Git icon in the palette.</li>
 <li>Click on the <strong>Clone a repository</strong> button</li>
 <li>In the modal popup, enter the following Github URL: <a href="https://github.com/GoogleCloudPlatform/generative-ai" target="_blank">https://github.com/GoogleCloudPlatform/generative-ai</a> and then click <strong>Clone</strong></li>
 </ol>
-<h2 is-upgraded><strong>Work through the intro_prompt_design notebook</strong></h2>
-<ol type="1" start="16">
+<h2 is-upgraded><strong>Work through the vision and speech notebooks</strong></h2>
+<ol type="1" start="13">
 <li>In the navigation pane (which shows <strong>generative-ai</strong> as the only entry), drill down to <strong>generative-ai &gt; vision &gt; getting-started</strong></li>
-<li>Work through both the notebooks you find there</li>
+<li>Work through the three notebooks you find there</li>
 <li>When done with the vision notebooks, navigate back up to the <strong>generative-ai</strong> folder, then down into <strong>speech &gt; getting-started</strong> (caveat, in the captioning workbook, the image they use for the last section doesn&#39;t actually generate captions. Find another image online that you like and use that instead)</li>
 <li>Work through the speech notebook</li>
 <li>End your lab</li>
@@ -209,8 +198,8 @@
     
       <google-codelab-step label="Text Embeddings and Vertex Search" duration="0">
         <ol type="1" start="1">
-<li>Log into <a href="https://googlecloud.qwiklabs.com" target="_blank">https://googlecloud.qwiklabs.com</a> and navigate to the <strong>Text Generation for Applications using Generative AI Studio</strong> class.</li>
-<li>Start the <strong>Getting Started with the PaLM API</strong> lab</li>
+<li>Log into <a href="https://googlecloud.qwiklabs.com" target="_blank">https://googlecloud.qwiklabs.com</a> and navigate to the <strong>Vertex AI Model Garden</strong> class.</li>
+<li>Start the <strong>Use the PaLM API to Cluster Products Based on Descriptions</strong> lab</li>
 <li>Follow the instructor&#39;s guidance to log into Google Cloud with lab credentials</li>
 </ol>
 <aside class="warning"><p><strong>You will NOT be following the Qwiklabs instructions for this lab. </strong>Rather, follow the instructions below.</p>
@@ -236,7 +225,7 @@
 <li>Click on the <strong>Clone a repository</strong> button</li>
 <li>In the modal popup, enter the following Github URL - <a href="https://github.com/roitraining/c-genai.git" target="_blank">https://github.com/roitraining/c-genai.git</a> - and then click <strong>Clone</strong></li>
 </ol>
-<h2 is-upgraded><strong>Work through the intro_prompt_design notebook</strong></h2>
+<h2 is-upgraded><strong>Work through the intro-textemb-vectorsearch.ipynb notebook</strong></h2>
 <ol type="1" start="13">
 <li>In the navigation pane, drill down to <strong>c-genai &gt; intro-textemb-vectorsearch</strong></li>
 <li>Double-click on the <strong> intro-textemb-vectorsearch</strong> notebook</li>
