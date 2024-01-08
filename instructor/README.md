@@ -23,10 +23,6 @@
 
 4. Copy the `endpoint_id` and `deployed_index_id` to a file so you can share 
    with students later
-5. Modify the **add-a-role** Cloud Run service to allow external requests
-   ```bash
-   sh net.sh
-   ```
 
 ## Cleanup
 
@@ -38,9 +34,4 @@ cleanup to the last person running the class that day.
    ```bash
    export PROJECT_ID="class-project-id"
    python v-clean.py
-   ```
-
-2. Modify the **add-a-role** Cloud Run service to allow only internal requests
-   ```bash
-   sh net.sh
    ```
